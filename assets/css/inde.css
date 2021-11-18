@@ -1,0 +1,52 @@
+.list{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding-top: 40px;
+
+}
+.todo{
+    background-color: #0c1a3c;
+    width:376px;
+    height:530px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 32px 48px 32px 16px;
+    color: white;
+    font-size: 25px;
+    
+    
+}
+.attend{
+    margin:12px;
+    padding:15px;
+    /* width: 400px;
+    height: 40px; */
+    border-radius: 15px;
+    /* background-color: #061166; */
+    /* border: groove; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: white;
+
+}
+#newtxt{
+    font-size: small;
+    font-weight: lighter;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 0px 12px;
+    padding:12px 15px;
+    width: 300px;
+    height: 40px;
+    border: groove;
+
+}
+.bord{
+    border: groove;
+    border-radius:6px;
+    display: flex;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    font-size: 15px;
+}
