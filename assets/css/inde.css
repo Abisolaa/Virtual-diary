@@ -3,19 +3,17 @@
     align-items: center;
     justify-content:center;
     padding-top: 40px;
-
 }
 .todo{
     background-color: #0c1a3c;
     width:376px;
-    height:530px;
+    height:430px;
     margin: 10px;
     border-radius: 15px;
     padding: 32px 48px 32px 16px;
     color: white;
-    font-size: 25px;
-    
-    
+    font-size: 25px;  
+    /* z-index: 30px;  */
 }
 .attend{
     margin:12px;
@@ -49,4 +47,7 @@
     margin-bottom: 12px;
     padding-left: 10px;
     font-size: 15px;
+}
+.bea{
+    background-size: 100%;
 }
