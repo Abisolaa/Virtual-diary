@@ -25,12 +25,12 @@
 <body class="hold-transition dark-skin sidebar-mini theme-warning fixed">
 	
  <div class="wrapper">
-	<div id="loader"></div>
+	<!-- <div id="loader"></div> -->
 	
   <header class="main-header">
-	<div class="d-flex align-items-center logo-box justify-content-start">	
+	<!-- <div class="d-flex align-items-center logo-box justify-content-start">	
 			
-	</div>
+	</div> -->
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
@@ -88,20 +88,17 @@
               </li>
             </ul>
           </li>	
-		  
-    
-			
         </ul>
       </div>
     </nav>
   </header>
   
-   <aside class="main-sidebar">
-     <!-- sidebar -->
+   <!-- <aside class="main-sidebar">
+     sidebar 
      <section class="sidebar position-relative">	
 	  	<div class="multinav">
 		 <div class="multinav-scroll" style="height: 100%;">	
-			   <!-- sidebar menu- -->
+			    sidebar menu
 				<div class="mx-25 mb-30 p-30 col-xxl-12 text-center bg-primary-light rounded5">
 					<img src="assets/images/1.jpg" alt="">
 					<h4 class="my-3 fw-500 text-uppercase text-primary col-xxl-12">Talk to me.</h4>
@@ -113,7 +110,7 @@
 		  </div> 
 		</div>
     </section> 
-  </aside> 
+  </aside>  -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -126,10 +123,23 @@
 					  <a href="" class="bord">Edit</a>
 					  <a href="" class="bord">Delete</a>
 			</div>
+			<div class="list">
+				<div class="todo col-xxl-12">
+						  <h2>My 19th birthday</h2>
+						  <h4>How i spent the entire day on my birthday.</h4><br>
+						  <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+							 Officia nemo repellendus aspernatur quo, rem corrupti exercitationem.
+							Numquam corrupti porro fugit ad deleniti qui dicta illo temporibus,
+							ratione itaque, laboriosam rem.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae facilis minima magni,
+							tenetur veritatis maiores vel odio dolore,
+							architecto expedita hic praesentium! Veritatis ratione, 
+							temporibus repellat quaerat libero dolor inventore.</h6>
+				</div>
 		</div>
 		<div class="list">
 			<div class="todo col-xxl-12">
-				<form action="">
+				<form action="home.php">
 					<label for="cc-payment" class="control-label">Title</label>
 					<input name="title" type="text" class="form-control">
 					<label for="cc-payment" class="control-label">Description</label>
@@ -150,7 +160,7 @@
   <footer class="main-footer">
 	  &copy; 2021 Virtual-Diary. | Developed By Abisola. | All Rights Reserved.
   </footer>
-</div>
+	</div>
  
 
 	

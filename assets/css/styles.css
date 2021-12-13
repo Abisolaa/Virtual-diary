@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #0c1a3c;
+    color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f107; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+footer {
+    background-color: #111620;
+    font-size: small;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.pages-container {
+    padding: 20px 0px;
+    width: 25vw;
+    height: 100%;
+    border-right: 0.8px solid rgba(255, 255, 255, 0.116);
+}
+
+.page {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: hidden;
+}
+
+input {
+    background-color: #1d419c49;
+    border: none;
+    padding: 5px 8px;
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    color: white;
+}
+
+.text-sm-bold {
+    font-size: small;
+    font-weight: 600;
+    color: rgb(118, 133, 167);
+    letter-spacing: 1px;
+}
+
+.pages-list {
+    height: 72vh;
+    overflow-y: scroll;
+}
+
+.pages-list-item {
+    max-height: 150px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    margin: 10px 0px;
+}
+
+.diary-content {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    margin: 20px 0px;
+    padding: 20px 20px;
+    outline: none;
+    border: none;
+    overflow-y: scroll;
+}
+
+.page-name {
+    background-color: transparent;
+    font-size: 2em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.page-content-container {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.icon-btn {
+    cursor: pointer;
+}
+
+.add-page-btn {
+    cursor: pointer;
+}
+
+.pages-list-item:hover {
+    background-color: #1d419c49;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.page-list-item-title {
+    font-weight: bold;
+    font-size: 16px;
+    text-overflow: ellipsis;
+}
+
+.page-list-item-content {
+    font-size: small;
+}
+
+#label-1, #label-2, #label-3 {
+    font-size: 2.3em;
+}

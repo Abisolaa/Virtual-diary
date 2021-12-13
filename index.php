@@ -33,7 +33,7 @@
 								<p class="mb-0">Sign in to continue to Dashboard.</p>							
 							</div>
 							<div class="p-40">
-								<form action="index.html" method="post">
+								<form action="addPost.php" method="post">
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
@@ -67,7 +67,7 @@
 									  </div>
 								</form>	
 								<div class="text-center">
-									<p class="mt-15 mb-0">Don't have an account? <a href="register.html" class="text-warning ms-5">Sign Up</a></p>
+									<p class="mt-15 mb-0">Don't have an account? <a href="register.php" class="text-warning ms-5">Sign Up</a></p>
 								</div>	
 							</div>						
 						</div>

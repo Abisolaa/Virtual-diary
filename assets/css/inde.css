@@ -49,5 +49,6 @@
     font-size: 15px;
 }
 .bea{
-    background-size: 100%;
+    background-size: 100%!important;
+    /* box-sizing: border-box; */
 }
