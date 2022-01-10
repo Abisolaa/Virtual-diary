@@ -22,6 +22,7 @@
     </div> -->
     <div class="flex-container">
          <?php include "./includes/posts.php" ?>
+         <?php  include "./includes/database.php" ?>
         <div class="page">
             <div class="flex-row-between px-4">
                 <h4>Good Afternoon, Aridunnu</h4>

@@ -22,6 +22,7 @@
 <body class="hold-transition theme-primary bg-img" style="background-image: url(assets/images/3.jpg)">
 	
 	<div class="container h-p100">
+	<?php  include "./includes/database.php" ?>
 		<div class="row align-items-center justify-content-md-center h-p100">
 			
 			<div class="col-12">
@@ -33,47 +34,77 @@
 								<p class="mb-0">Register a new membership</p>							
 							</div>
 							<div class="p-40">
-								<form action="index.html" method="post">
-									<div class="form-group">
-										<div class="input-group mb-3">
-											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Full Name">
-										</div>
-									</div>
+								<form  method="post">
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
-											<input type="email" class="form-control ps-15 bg-transparent" placeholder="Email">
+											<input type="email" name="email" class="form-control ps-15 bg-transparent" required placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+											<input type="password" name="pass" class="form-control ps-15 bg-transparent" required placeholder="Password">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Retype Password">
+											<input type="password" name="password" class="form-control ps-15 bg-transparent" required placeholder="Retype Password">
 										</div>
 									</div>
 									  <div class="row">
 										<div class="col-12">
 										  <div class="checkbox">
-											<input type="checkbox" id="basic_checkbox_1" >
+											<input required type="checkbox" id="basic_checkbox_1" >
 											<label for="basic_checkbox_1">I agree to the <a href="#" class="text-warning"><b>Terms</b></a></label>
 										  </div>
 										</div>
 										<!-- /.col -->
 										<div class="col-12 text-center">
-										  <button type="submit" class="btn btn-info margin-top-10">SIGN UP</button>
+										  <button type="submit" name="register" class="btn btn-info margin-top-10">SIGN UP</button>
 										</div>
 										<!-- /.col -->
 									  </div>
+									  <?php
+									  if(isset($_POST["register"]))
+                                {
+
+									
+                                $email = $_POST["email"];
+                                $password = $_POST["pass"];
+								$retype_password = $_POST["password"];
+                                echo $email . " " .$password." ". $retype_password;
+
+									if(!empty($email) || !empty($password) || !empty($retype_password) ){
+									
+										if($password == $retype_password){
+
+												$sqlQuery = "INTO `register`(`Id`, `Email`, `Password`, `date`, `Status`) 
+															VALUES (null,'$email','$password',now(),'0')";
+
+												  $Query = mysqli_query($mysqli, $sqlQuery);		
+												  
+												  if($Query){
+														echo "Registration Successful!";
+												  }else{
+														echo "Something, please try again later!!!";
+												  }
+
+										}else {
+											echo " Password does not Match, Please try again! ";
+										}
+
+
+									}else {
+
+											echo " Fields Cann't empty!!! ";
+									}
+                                }
+	                            ?>
 								</form>				
 								<div class="text-center">
-									<p class="mt-15 mb-0">Already have an account?<a href="index.php" class="text-danger ms-5"> Sign In</a></p>
+									<p class="mt-15 mb-0">Already have an account?<a href="index.php_" class="text-danger ms-5"> Sign In</a></p>
 								</div>
 							</div>
 						</div>								
