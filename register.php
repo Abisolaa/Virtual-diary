@@ -22,7 +22,6 @@
 <body class="hold-transition theme-primary bg-img" style="background-image: url(assets/images/3.jpg)">
 	
 	<div class="container h-p100">
-	<?php  include "./includes/database.php" ?>
 		<div class="row align-items-center justify-content-md-center h-p100">
 			
 			<div class="col-12">
