@@ -22,6 +22,7 @@
 <body class="hold-transition theme-primary bg-img" style="background-image: url(assets/images/3.jpg)">
 	
 	<div class="container h-p100">
+	<?php  include "./includes/database.php" ?>
 		<div class="row align-items-center justify-content-md-center h-p100">
 			
 			<div class="col-12">
@@ -73,17 +74,16 @@
                                 $email = $_POST["email"];
                                 $password = $_POST["pass"];
 								$retype_password = $_POST["password"];
-                                echo $email . " " .$password." ". $retype_password;
+                                // echo $email . " " .$password." ". $retype_password;
 
 									if(!empty($email) || !empty($password) || !empty($retype_password) ){
 									
 										if($password == $retype_password){
 
-												$sqlQuery = "INTO `register`(`Id`, `Email`, `Password`, `date`, `Status`) 
+												$sqlQuery = "INSERT INTO `register`(`Id`, `Email`, `Password`, `date`, `Status`) 
 															VALUES (null,'$email','$password',now(),'0')";
-
 												  $Query = mysqli_query($mysqli, $sqlQuery);		
-												  
+												//   echo $sqlQuery;
 												  if($Query){
 														echo "Registration Successful!";
 												  }else{
@@ -97,13 +97,13 @@
 
 									}else {
 
-											echo " Fields Cann't empty!!! ";
+											// echo " Fields Cann't empty!!! ";
 									}
                                 }
 	                            ?>
 								</form>				
 								<div class="text-center">
-									<p class="mt-15 mb-0">Already have an account?<a href="index.php_" class="text-danger ms-5"> Sign In</a></p>
+									<p class="mt-15 mb-0">Already have an account?<a href="index.php" class="text-danger ms-5"> Sign In</a></p>
 								</div>
 							</div>
 						</div>								

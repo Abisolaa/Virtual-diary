@@ -19,8 +19,8 @@
 
 </head>
 	
-<body class="hold-transition theme-primary bg-img" style="background-image: url(assets/images/7.jpg)">
-	
+<body class="hold-transition theme-primary bg-img" style="background-image: url(assets/images/3.jpg)">
+<?php  include "./includes/database.php" ?>
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">	
 			
@@ -33,17 +33,17 @@
 								<p class="mb-0">Sign in to continue to Dashboard.</p>							
 							</div>
 							<div class="p-40">
-								<form action="addPost.php" method="post">
+								<form  method="post">
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Username">
+											<input type="text" name="email" class="form-control ps-15 bg-transparent" required placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+											<input type="password" name="password" class="form-control ps-15 bg-transparent" required placeholder="Password">
 										</div>
 									</div>
 									  <div class="row">
@@ -61,10 +61,62 @@
 										</div>
 										<!-- /.col -->
 										<div class="col-12 text-center">
-										  <button type="submit" class="btn btn-danger mt-10">SIGN IN</button>
+										  <button type="submit" name="login" class="btn btn-danger mt-10">SIGN IN</button>
 										</div>
 										<!-- /.col -->
 									  </div>
+									  <?php
+									  if(isset($_POST["login"]))
+                                {
+
+									
+                                $email = $_POST["email"];
+                                $password = $_POST["password"];
+                            //    echo $email . " " .$password." ";
+
+									if(!empty($email) || !empty($password)){
+									
+										if($password == $password){
+
+												$sqlSelect = "SELECT * FROM `register` WHERE email = '$email' AND Password = '$password';";
+
+												  $Query = mysqli_query($mysqli, $sqlSelect);		
+												  
+
+												  $rowcount = mysqli_num_rows($Query); 
+
+												  if($rowcount > 0 ){
+													    
+													 $result = mysqli_fetch_assoc($Query);
+
+														if($result["Password"] == $password){
+															
+															session_start();
+															echo "Login Successful!";
+															$_SESSION["id"] = $result["Id"];
+															$_SESSION["email"] = $email;
+
+															echo "<script> window.location.replace('addPost.php') </script>";
+
+														}else{
+															echo "Password not correct, please try again!!!";
+														}
+
+												  }else{
+													   		echo "Email or password does not exist, please try again later!!!";
+												  }
+
+										}else {
+											echo " Password does not Match, Please try again! ";
+										}
+
+
+									}else {
+
+											echo " Fields Cann't empty!!! ";
+									}
+                                }
+	                            ?>
 								</form>	
 								<div class="text-center">
 									<p class="mt-15 mb-0">Don't have an account? <a href="register.php" class="text-warning ms-5">Sign Up</a></p>
