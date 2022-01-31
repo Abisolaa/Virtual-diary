@@ -2,7 +2,7 @@
 
 // mysql://b3c0eeaf180f87:fabdc3d2@us-cdbr-east-05.cleardb.net/heroku_98e98cf318882e8?reconnect=true
 
-$devType =  "dev";
+$devType =  "stage";
 
 
 
