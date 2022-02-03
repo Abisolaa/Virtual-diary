@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diary App</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -32,8 +32,8 @@
 
                             <div class="col-lg-6">
 
-                              <div class="mt-4 page-details">
-                                    <h5 style="    padding-left: 1em;" >Add Post</h5>
+                            <div class="mt-4 page-details">
+                            <h5 style="    padding-left: 1em;" >Add Post</h5>
                                         <form action="" method="post" enctype="multipart/form-data">
 
                                                 <div class="form-group page-name-container flex-row-between">
