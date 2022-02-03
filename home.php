@@ -3,26 +3,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Diary App</title>
-=======
     <title>Edit Diary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
->>>>>>> 6eb6929598abf84ef0afcc7195473bbb6732b261
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     
-<<<<<<< HEAD
-    <div class="flex-container">    
-        <?php include "./includes/posts.php" ?>
-        <div class="page">
-=======
     <div class="container">
         <?php include "./includes/link.php" ?>
         
->>>>>>> 6eb6929598abf84ef0afcc7195473bbb6732b261
         <?php include "./includes/header.php" ?>
         
        
