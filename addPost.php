@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diary App</title>
+    <title>Post Diary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -20,53 +21,42 @@
                 <p class="text-info">Access your data on any device at anytime</p>
             </div>
     </div> -->
-    <div class="flex-container">
-         <?php include "./includes/posts.php" ?>
-        <div class="page">
+    <div class="container">
+         <?php include "./includes/link.php" ?>
+       
            
             <?php include "./includes/header.php" ?>
+            
             
                 <div class="container">
 
                         <div class="row">
 
-                            <div class="col-lg-6">
-
-                            <div class="mt-4 page-details">
-                            <h5 style="    padding-left: 1em;" >Add Post</h5>
+                            <div class="col-lg-5" style="border-right: 2px solid;">
+                                    <h1>Add diary</h1>
+   
                                         <form action="" method="post" enctype="multipart/form-data">
 
-                                                <div class="form-group page-name-container flex-row-between">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
+                                                       
+                                                        <div class=" form-group">
                                                             <label id="label-1" for="cc-payment" class="control-label">Title</label>
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <input type="text" required name="diaryTitle" placeholder="Page Name" class="form-control page-name" >
+                                                            <input type="text"  required name="diaryTitle" placeholder="Page Name" class="form-control page-name" >
                                                         </div> 
-                                                    </div>
-                                                </div>
-                                                <div class="form-group page-content-container">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                        <label  id="label-2" for="cc-payment" class="control-label">Description</label> 
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <textarea placeholder="Start Writing" required name="diaryDescription" class="form-control diary-content" name="diary-content" id="diary-content"></textarea>
+                                                   
+                                                          <div class="form-group ">
+                                                             <div class=" form-group">
+                                                             <label  id="label-2" for="cc-payment" class="control-label">Description</label> 
+                                                       
+                                                            <textarea style="border: 1px solid;" placeholder="Start Writing" required name="diaryDescription" class="form-control diary-content" name="diary-content" id="diary-content"></textarea>
                                                         </div> 
-                                                    </div>
                                                 </div>
-                                                <div class="form-group page-name-container flex-row-between">
-                                                    <div class="row">
+                                                <div class="form-group ">
                                                         <div class="col-lg-12">
-                                                            <label id="label-3" for="cc-payment" class="control-label">Image</label>
-                                                        </div>
-                                                        <div class="col-lg-12">
+                                                             <label id="label-3" for="cc-payment" class="control-label">Image</label>
                                                             <input type="file" name="imageUpload" required placeholder="Page Name" class="form-control page-name" >
                                                         </div> 
-                                                    </div>
                                                 </div>
-                                                <div class="form-group page-name-container flex-row-between"> 
+                                                <div class="form-group "> 
                                                     <button id="payment-button"  class="btn btn-primary "  name="upload" type="submit">
                                                     <span id="payment-button-amount">Upload To Diary</span>
                                                     </button>  
@@ -118,21 +108,22 @@
                                                 
 
                                         </form>
-                              </div>
+                         
+                                                    <hr>
 
                             </div>
 
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-7">
 
-                                    <img style="width:28em" src="./assets/images/4.jpg" alt="loading..." srcset="">
+                            <?php include "./includes/posts.php" ?>
 
                             </div>
 
                         </div>
 
                 </div>
-        </div>
+    
     </div>
     <footer class="py-1 text-center">
         &copy; 2021 Virtual-Diary. | Developed By Abisola. | All Rights Reserved.

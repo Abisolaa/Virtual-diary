@@ -3,26 +3,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Diary App</title>
-=======
-    <title>Edit Diary</title>
+    <title>Star Diary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
->>>>>>> 6eb6929598abf84ef0afcc7195473bbb6732b261
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     
-<<<<<<< HEAD
-    <div class="flex-container">    
-        <?php include "./includes/posts.php" ?>
-        <div class="page">
-=======
     <div class="container">
         <?php include "./includes/link.php" ?>
         
->>>>>>> 6eb6929598abf84ef0afcc7195473bbb6732b261
         <?php include "./includes/header.php" ?>
         
        
@@ -47,8 +37,6 @@
 
                                 ?>
 
-                                            <h2 style="    padding-left: 1em;" >Edit Post</h2>
-                                            <br>
                                             
                                                 <div class="page-name-container flex-row-between">
                                                 <h5><?php echo $result["Title"] ;  ?></h5> 
@@ -64,76 +52,36 @@
                                                             <img style="    width: 15em;height: 15em;" src="./assets/myDiaryImage/<?php echo  $result["Image"] ?>" alt="my diary picture" srcset="">
                                                 </div>
 
-                                                <div class="form-group">
-                                                
-                                                    <input class="form-controller" type="file" name="imageUpload" >
-                                                </div>
-
-                                                <br>
-
-                                                <div class="page-name-container flex-row-between">
-                                                <p><?php echo $result["Description"] ;  ?></p> 
-                                                </div>
-                                                <div class="page-content-container">
-                                                
-                                                    <textarea style="    border: 1px solid;height: 10em;" placeholder="Start Writing" class="diary-content" name="diaryDescription" id="diary-content"><?php echo $result["Description"]; ?></textarea>
-                                                </div>
+<br>
+                                               
 
                                         <div class="form-group page-name-container flex-row-between"> 
                                                                     <button id="payment-button"  class="btn btn-primary "  name="update" type="submit">
-                                                                    <span id="payment-button-amount">Upload To Diary</span>
+                                                                    <span id="payment-button-amount">Star</span>
                                                                     </button> 
                                                                     <?php 
                                         
                                         
                                             if(isset($_POST["update"])){
                                                 $diaryTitle = $_POST["diaryTitle"];
-                                                $diaryDescription = addslashes($_POST["diaryDescription"]);
                                                 
-                                                if (! empty($diaryTitle) && !empty($diaryDescription)) {
-
-                                                        $url = './assets/myDiaryImage/';
-
-                                                        $fileName = $_FILES["imageUpload"]["name"];
-                                                        $fileTmpName = $_FILES["imageUpload"]["tmp_name"];
-
-                                                        $url_save  =  $url.$fileName ;
-
-                                                        if( move_uploaded_file($fileTmpName,$url_save)) {
+                                                if (! empty($diaryTitle) ) {
 
                                                                 
-                                                                $sqlQuery = "UPDATE `content` SET `Title`='$diaryTitle',`Description`='$diaryDescription',`Image`='$fileName',`status`='updated',
-                                                                `Path`='$url_save' WHERE id = '$myDiaryId'  ";
+                                                                $sqlQuery = "UPDATE `content` SET `Title`='$diaryTitle' 
+                                                                 WHERE id = '$myDiaryId'  ";
                                                                 $Query = mysqli_query($mysqli, $sqlQuery);		
                                                                 // echo $sqlQuery;
                                                                 if($Query){
                                                                     
-                                                                        echo "updated successfully!";
-
+                                                                        echo "Stared successfully!";
 
                                                                 }else{
                                                                         echo "Something, please try again later!!!";
                                                                 }
                                                             
 
-                                                        }else{
-
-                                                                $sqlQuery = "UPDATE `content` SET `Title`='$diaryTitle',`Description`='$diaryDescription',`status`='updated'
-                                                                WHERE id = '$myDiaryId'  ";
-
-
-                                                                $Query = mysqli_query($mysqli, $sqlQuery);		
-                                                                // echo $sqlQuery;
-                                                                if($Query){
-                                                                    
-                                                                        echo "updated successfully!";
-
-
-                                                                }else{
-                                                                        echo "Something, please try again later!!! <br>
-                                                                        <br>";
-                                                                }
-                                                        }
+                                                        
 
                                                 }
 
@@ -150,7 +98,7 @@
                 </div>
                 <div class="col-lg-6">
                     
-                      <?php include "./includes/posts.php" ?>
+                      <?php include "./includes/posts_.php" ?>
 
                 </div>                            
         </div>
