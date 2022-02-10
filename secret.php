@@ -27,7 +27,7 @@
                                         <article>
                                             <p>Note:: <i>this can be used to access every of your information, please keep it save.</i></p>
                                         </article>
-                                        <form action="" method="post" enctype="multipart/form-data">
+                                        <form  method="post" enctype="multipart/form-data">
 
                                                        
                                                         <div class=" form-group">
@@ -40,7 +40,7 @@
                                                
                                                 <div class="form-group "> 
                                                     <button id="payment-button"  class="btn btn-primary "  name="upload" type="submit">
-                                                    <span id="payment-button-amount">Update your Diary</span>
+                                                    Update your Diary
                                                     </button>  
                                                     <?php 
                                                 
@@ -50,19 +50,19 @@
                                                         if (! empty($somethinhidden)) {
 
                                                                     $key =  base64_encode($somethinhidden);
-
-                                                                        $sqlQuery = "INSERT INTO `secret_key`(`id`, `user_id`, `key`, `status`, `date`, `deleted`) 
-                                                                        VALUES (null,'$loggedInUser','$key','0',now(),'0')";
-                                                                        $Query = mysqli_query($mysqli, $sqlQuery);		
-                                                                          // echo $sqlQuery;
-                                                                        if($Query){
+                                                                        echo $key;
+                                                                        // $sqlQuery = "INSERT INTO `secret_key`(`id`, `user_id`, `key`, `status`, `date`, `deleted`) 
+                                                                        // VALUES (null,'$loggedInUser','$key','0',now(),'0')";
+                                                                        // $Query = mysqli_query($mysqli, $sqlQuery);		
+                                                                        //   // echo $sqlQuery;
+                                                                        // if($Query){
                                                                                
-                                                                                echo "uploaded successfully!";
+                                                                        //         echo "uploaded successfully!";
 
 
-                                                                        }else{
-                                                                                echo "Something, please try again later!!!";
-                                                                        }
+                                                                        // }else{
+                                                                        //         echo "Something, please try again later!!!";
+                                                                        // }
                                                                     
                                                         }
                                                         
