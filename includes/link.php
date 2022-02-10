@@ -17,10 +17,11 @@ $rowcount = mysqli_num_rows($Query);
 if($rowcount > 0 ){
 
 }else{
-    
-    if(explode('/',$_SERVER["REQUEST_URI"])[2] != "secret.php"){
-    echo "<script> window.location.replace('secret.php') </script>";
-    }
+   
+    echo explode('/',$_SERVER["REQUEST_URI"]) ;
+    // if(explode('/',$_SERVER["REQUEST_URI"])[2] != "secret.php"){
+    // echo "<script> window.location.replace('secret.php') </script>";
+    // }
 }   
 
 
