@@ -51,19 +51,19 @@
 
                                                                     $key =  base64_encode($somethinhidden);
                                                                      
-                                                                        $sqlQuery = "INSERT INTO `secret_key`(`id`, `user_id`, `key`, `status`, `date`, `deleted`) 
+                                                                        $sqlQuery = "INSERT INTO `secret_key`(`id`, `user_id`, `keyy`, `status`, `date`, `deleted`) 
                                                                         VALUES (null,'$loggedInUser','$key','0',now(),'0')";
-                                                                        echo $sqlQuery ;
+                                                                        
                                                                         $Query = mysqli_query($mysqli, $sqlQuery);		
-                                                                          echo $sqlQuery;
-                                                                        // if($Query){
+                                                                          
+                                                                        if($Query){
                                                                                
-                                                                        //         echo "uploaded successfully!";
+                                                                                echo "uploaded successfully!";
 
 
-                                                                        // }else{
-                                                                        //         echo "Something, please try again later!!!";
-                                                                        // }
+                                                                        }else{
+                                                                                echo "Something, please try again later!!!";
+                                                                        }
                                                                     
                                                         }
                                                         
