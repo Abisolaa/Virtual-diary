@@ -76,10 +76,14 @@
                                                                 $url_save  =  $url.$fileName ;
 
                                                                 if( move_uploaded_file($fileTmpName,$url_save)) {
-
+                                                                                           
+                                                                            $dt = base64_encode ($diaryTitle);
+                                                                            $dd = base64_encode ($diaryDescription);
+                                                                            $fn = base64_encode ($fileName);
+                                                                            $us = base64_encode ($url_save);
                                                                         
                                                                         $sqlQuery = "INSERT INTO `content`(`Id`, `Title`, `Description`, `Image`, `status`, `delete`, `Path`, `date`, `Userid`) 
-                                                                        VALUES (null,'$diaryTitle','$diaryDescription','$fileName','0','0','$url_save',now(),'$loggedInUser')";
+                                                                        VALUES (null,'$dt','$dd','$fn','0','0','$us',now(),'$loggedInUser')";
                                                                         $Query = mysqli_query($mysqli, $sqlQuery);		
                                                                           // echo $sqlQuery;
                                                                         if($Query){
