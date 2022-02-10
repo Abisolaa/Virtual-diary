@@ -53,6 +53,7 @@
                                                                      
                                                                         $sqlQuery = "INSERT INTO `secret_key`(`id`, `user_id`, `key`, `status`, `date`, `deleted`) 
                                                                         VALUES (null,'$loggedInUser','$key','0',now(),'0')";
+                                                                        echo $sqlQuery ;
                                                                         $Query = mysqli_query($mysqli, $sqlQuery);		
                                                                           echo $sqlQuery;
                                                                         // if($Query){
