@@ -23,7 +23,7 @@
 
                             <div class="col-lg-5" style="border-right: 2px solid;">
                             <a class="btn btn-primary " href="addPost.php">Home</a>
-                                    <h1>Add secret pass</h1>
+                                    <h3>Add secret pass</h3>
                                         <article>
                                             <p>Note:: <i>this can be used to access every of your information, please keep it save.</i></p>
                                         </article>
