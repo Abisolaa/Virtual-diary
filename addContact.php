@@ -28,7 +28,7 @@
                                         <form action="" method="post" enctype="multipart/form-data">
 
                                                        
-                                                        <div class=" form-group">
+                                                        <div class=" form-group" >
                                                             <label id="label-1" for="cc-payment" class="control-label"> Title</label>
                                                             <input type="text"  required name="title" placeholder="something you do not want to forget" class="form-control page-name" >
                                                         </div> 
