@@ -70,7 +70,7 @@ if(isset($_POST["viewContent"])){
                 
                 ?>
                   
-                  <a href="home.php?myDiaryId=<?php echo  $row[0] ?>&valid='true' " style="    color: #fff;text-decoration: none;">
+                  <a href="home.php?myDiaryId=<?php echo $row[0];?>&valid='true' " style="    color: #fff;text-decoration: none;">
                         <div class="pages-list-item p-2">
                                 <div class="page-list-item-title"><?php  echo ($valid == "false") ? $row[1] : base64_decode($row[1])?> ❤️</div>
                                 <span class="page-list-item-content"><?php echo ($valid == "false") ? $row[2] : base64_decode($row[2]) ?></span>
@@ -78,7 +78,8 @@ if(isset($_POST["viewContent"])){
                          <hr>
                   </a>
                     
-                <?php } 
+                <?php }
+
                      }else{
 
                             echo  " <br> <i> <h6> How was your day? Please lets hear from you today 😀. </h6> </i>";

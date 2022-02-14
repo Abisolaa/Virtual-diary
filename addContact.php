@@ -22,7 +22,7 @@
                         <div class="row">
 
                             <div class="col-lg-5" style="border-right: 2px solid;">
-                            <a class="btn btn-primary " href="addPost.php">Home</a>
+                            <a class="btn btn-primary " href="addPost.php?valid=false">Home</a>
                                     <h1>Contact</h1>
                                        
                                         <form action="" method="post" enctype="multipart/form-data">

@@ -96,7 +96,7 @@
 															$_SESSION["id"] = $result["Id"];
 															$_SESSION["email"] = $email;
 
-															echo "<script> window.location.replace('addPost.php') </script>";
+															echo "<script> window.location.replace('addPost.php?valid=') </script>";
 
 														}else{
 															echo "Password not correct, please try again!!!";

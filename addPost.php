@@ -52,7 +52,7 @@
                                                 </div>
                                                 <div class="form-group ">
                                                         <div class="col-lg-12">
-                                                             <label id="label-3" for="cc-payment" class="control-label">Image</label>
+                                                             <label id="label-3" for="cc-payment" class="control-label">File</label>
                                                             <input type="file" name="imageUpload" required placeholder="Page Name" class="form-control page-name" >
                                                         </div> 
                                                 </div>

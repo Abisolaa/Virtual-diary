@@ -43,7 +43,7 @@
                 
                 ?>
                   
-                  <a href="star.php?myDiaryId=<?php echo  $row[0] ?>" style="    color: #fff;text-decoration: none;">
+                  <a href="star.php?myDiaryId=<?php echo $row[0]?>" style="    color: #fff;text-decoration: none;">
                         <div class="pages-list-item p-2">
                                 <div class="page-list-item-title"><?php echo $row[1]?> ❤️</div>
                                 <span class="page-list-item-content"><?php echo $row[2]?></span>
@@ -58,7 +58,7 @@
 
                      }
                 
-                        
+                            
                 
                 ?>
 

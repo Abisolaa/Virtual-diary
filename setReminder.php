@@ -22,7 +22,7 @@
                         <div class="row">
 
                             <div class="col-lg-5" style="border-right: 2px solid;">
-                            <a class="btn btn-primary " href="addPost.php">Home</a>
+                            <a class="btn btn-primary " href="addPost.php?valid=false">Home</a>
                                     <h1>Add  reminder</h1>
                                        
                                         <form action="" method="post" enctype="multipart/form-data">
@@ -115,7 +115,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="text-sm-bold px-2 pt-4 pb-2">Recent</div>
-                                                                                    <div class="px-2 pages-list">
+                                                                                    <div class="px-2 pages-list " data-id="34">
                                                                                     
                                                                                             
                                                                                         <?php
@@ -155,16 +155,18 @@
 
 
                                                                                                 $valid = $_GET["valid"];
+                                                                                                $t = 0;
 
                                                                                                 while ($row = mysqli_fetch_row($Query) ){
-                                                                                                
+                                                                                                $t +=1;
                                                                                                     // print_r($row[1]);
 
                                                                                         
                                                                                         ?>
                                                                                         
                                                                                         <a href="#" style="    color: #fff;text-decoration: none;">
-                                                                                                <div class="pages-list-item p-2">
+                                                                                                    <input type="text" class="time-<?php  echo $t?>" value="<?php echo  base64_decode($row[3]) ; ?>">
+                                                                                                <div class="pages-list-item p-2 ">
                                                                                                         <div class="page-list-item-title"><?php echo ($valid == "false") ? $row[3] : base64_decode($row[3]) ; ?> ❤️</div>
                                                                                                         <span class="page-list-item-content"><?php echo ($valid == "false") ? $row[2] : base64_decode($row[2]) ;?></span>
                                                                                                 </div>
@@ -203,6 +205,37 @@
 	<script src="assets/bootstrap/js/jquery-3.6.0.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+
+                (function alamFunction () {
+                    var totalAlert =  document.querySelector(".pages-list").childElementCount - 1;
+                    var alertClassValue = [];
+                    for(var i = 0; i < totalAlert; i++){
+                        var ds = `.time-${i + 1}`;
+                        alertClassValue[i] = document.querySelector(ds).value;
+                    }
+                    console.log(alertClassValue);
+                    var g = setInterval(eve => {
+                                var d = new Date();
+                                var h = d.getHours();
+                                var m = d.getMinutes();
+
+                                var hr = (h.toString().length > 1) ? h : `0${h}` ; 
+                                var mi = (m.toString().length > 1) ? m : `0${m}` ; 
+                                var timeString =  `${hr}:${mi}`;
+
+                                alertClassValue.forEach(eve =>{
+                                    if(eve == timeString)
+                                     alert(`${timeString} :: Its time `)
+                                })
+                                console.log(timeString)
+                             }
+                    ,10);
+                })();
+                
+
+    </script>
   
 </body>
 </html>

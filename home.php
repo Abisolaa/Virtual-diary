@@ -41,18 +41,19 @@
                                             <br>
                                             
                                                 <div class="page-name-container flex-row-between">
-                                                <h5><?php echo $result["Title"] ;  ?></h5> 
+                                                <h5><?php echo base64_decode($result["Title"]) ;  ?></h5> 
                                                 </div>
                                                 <div class="form-group">
                                                    
-                                                    <input class="form-control" style="    border: 1px solid;" type="text" name="diaryTitle" placeholder="Page Name" value="<?php echo $result["Title"] ;  ?>"class="page-name" >
+                                                    <input class="form-control" style="    border: 1px solid;" type="text" name="diaryTitle" placeholder="Page Name" value="<?php echo base64_decode($result["Title"]) ;  ?>"class="page-name" >
                                                 </div>
 
                                                 <br>
                                                 
                                                 <div class="page-name-container flex-row-between">
-                                                            <img style="    width: 15em;height: 15em;" src="./assets/myDiaryImage/<?php echo  $result["Image"] ?>" alt="my diary picture" srcset="">
+                                                            <img style="    width: 15em;height: 15em;" src="./assets/myDiaryImage/<?php echo  base64_decode($result["Image"]) ?>" alt="my diary picture" srcset="">
                                                 </div>
+                                                <a href="./assets/myDiaryImage/<?php echo  base64_decode($result["Image"]) ?>">Download </a>
 
                                                 <div class="form-group">
                                                 
@@ -62,11 +63,11 @@
                                                 <br>
 
                                                 <div class="page-name-container flex-row-between">
-                                                <p><?php echo $result["Description"] ;  ?></p> 
+                                                <p><?php echo base64_decode($result["Description"]) ;  ?></p> 
                                                 </div>
                                                 <div class="page-content-container">
                                                 
-                                                    <textarea style="    border: 1px solid;height: 10em;" placeholder="Start Writing" class="diary-content" name="diaryDescription" id="diary-content"><?php echo $result["Description"]; ?></textarea>
+                                                    <textarea style="    border: 1px solid;height: 10em;" placeholder="Start Writing" class="diary-content" name="diaryDescription" id="diary-content"><?php echo base64_decode($result["Description"]); ?></textarea>
                                                 </div>
 
                                         <div class="form-group page-name-container flex-row-between"> 
@@ -91,8 +92,12 @@
 
                                                         if( move_uploaded_file($fileTmpName,$url_save)) {
 
+                                                                    $dt = base64_encode ($diaryTitle);
+                                                                    $dd = base64_encode ($diaryDescription);
+                                                                    $fn = base64_encode ($fileName);
+                                                                    $us = base64_encode ($url_save);
                                                                 
-                                                                $sqlQuery = "UPDATE `content` SET `Title`='$diaryTitle',`Description`='$diaryDescription',`Image`='$fileName',`status`='updated',
+                                                                $sqlQuery = "UPDATE `content` SET `Title`='$dt',`Description`='$dd',`Image`='$fn',`status`='updated',
                                                                 `Path`='$url_save' WHERE id = '$myDiaryId'  ";
                                                                 $Query = mysqli_query($mysqli, $sqlQuery);		
                                                                 // echo $sqlQuery;
@@ -108,7 +113,12 @@
 
                                                         }else{
 
-                                                                $sqlQuery = "UPDATE `content` SET `Title`='$diaryTitle',`Description`='$diaryDescription',`status`='updated'
+                                                                $dt = base64_encode ($diaryTitle);
+                                                                $dd = base64_encode ($diaryDescription);
+                                                                $fn = base64_encode ($fileName);
+                                                                $us = base64_encode ($url_save);
+
+                                                                $sqlQuery = "UPDATE `content` SET `Title`='$dt',`Description`='$dd',`status`='updated'
                                                                 WHERE id = '$myDiaryId'  ";
 
 
